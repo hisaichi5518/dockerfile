@@ -1,7 +1,5 @@
 # Dockerfile
 
-TODO: Write a gem description
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,7 +16,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Dockerfile.rb
+from "ubuntu"
+maintainer "hisaichi5518"
+run %q{echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list}
+run "apt-get update"
+run "apt-get install -y inotify-tools nginx apache2 openssh-server"
+```
+
+```shell
+dockerfile ./Dockerfile.rb > Dockerfile
+```
 
 ## Contributing
 
