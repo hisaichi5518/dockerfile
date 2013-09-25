@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.absolute_path("lib"))
+
+require "dockerfile/dsl"
+include Dockerfile::DSL
+
+dockerfile = ARGV[0] || "./Dockerfile.rb"
+
+load File.expand_path(dockerfile)
